@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://beegt64waecq2"]
+
+[ext_resource type="Script" path="res://esc_menu.gd" id="1_w3cxc"]
+[ext_resource type="Texture2D" uid="uid://oajoatrwa1q4" path="res://banner 1.png" id="2_nfrwd"]
+[ext_resource type="FontFile" uid="uid://qh1gu7xah85u" path="res://SWINPH.ttf" id="3_01o22"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4yq5r"]
+
+[node name="esc_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w3cxc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_right = 2046.0
+offset_bottom = 1080.0
+texture = ExtResource("2_nfrwd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 630.0
+offset_top = 123.0
+offset_right = 1188.0
+offset_bottom = 239.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_01o22")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4yq5r")
+disabled = true
+text = "VISSZA A MENŰBE"

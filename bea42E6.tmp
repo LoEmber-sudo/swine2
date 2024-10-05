@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://2pqcapc7sbgw"]
+
+[ext_resource type="Texture2D" uid="uid://dvnsyt5pmghho" path="res://swine_2_ui_2_kozipso.png" id="1_17r43"]
+[ext_resource type="Script" path="res://beallitasok.gd" id="1_478rh"]
+[ext_resource type="FontFile" uid="uid://qh1gu7xah85u" path="res://SWINPH.ttf" id="3_kg30q"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_478rh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -804.0
+offset_top = -202.0
+offset_right = 2861.0
+offset_bottom = 1298.0
+texture = ExtResource("1_17r43")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 615.0
+offset_top = 14.0
+offset_right = 1315.0
+offset_bottom = 714.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_kg30q")
+theme_override_font_sizes/font_size = 150
+text = "Beállítások"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 2
+offset_left = 615.0
+offset_top = 212.0
+offset_right = 1315.0
+offset_bottom = 282.0

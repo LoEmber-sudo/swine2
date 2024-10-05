@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cflhsbc2s5wvg"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_6cfbf"]
+file = "res://vecteezy_green-abstract-low-poly-triangle-background_42238641-_1_.ogv"
+
+[node name="fkjnawkj" type="Node2D"]
+
+[node name="diszno_movie" type="VideoStreamPlayer" parent="."]
+layout_direction = 2
+offset_left = -60.0
+offset_right = 3780.0
+offset_bottom = 2160.0
+scale = Vector2(0.515549, 0.512765)
+pivot_offset = Vector2(100, 0)
+size_flags_horizontal = 4
+stream = SubResource("VideoStreamTheora_6cfbf")
+autoplay = true

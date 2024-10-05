@@ -1,0 +1,228 @@
+[gd_scene load_steps=13 format=3 uid="uid://2pqcapc7sbgw"]
+
+[ext_resource type="Texture2D" uid="uid://dvnsyt5pmghho" path="res://swine_2_ui_2_kozipso.png" id="1_17r43"]
+[ext_resource type="Script" path="res://Script/beallitasok.gd" id="1_478rh"]
+[ext_resource type="FontFile" uid="uid://qh1gu7xah85u" path="res://SWINPH.ttf" id="3_kg30q"]
+[ext_resource type="Texture2D" uid="uid://oajoatrwa1q4" path="res://Textúra/banner 1.png" id="3_yogqb"]
+[ext_resource type="FontFile" uid="uid://cddvu7fggguqi" path="res://SWINRH.ttf" id="4_0ftmd"]
+[ext_resource type="Texture2D" uid="uid://csv3jsluht72s" path="res://Textúra/repa_cross_javitott.png" id="5_p38kj"]
+[ext_resource type="Texture2D" uid="uid://tcdo2gnwxi3i" path="res://Textúra/visszajel.png" id="6_eqqgx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_doeuw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ukcis"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ogr8g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81mmm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ppiox"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_478rh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1758.0
+offset_top = -750.0
+offset_right = 1912.0
+offset_bottom = 750.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_17r43")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 129.0
+offset_top = -6.0
+offset_right = 2049.0
+offset_bottom = 1074.0
+texture = ExtResource("3_yogqb")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 645.0
+offset_top = 20.0
+offset_right = 1315.0
+offset_bottom = 214.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_kg30q")
+theme_override_font_sizes/font_size = 150
+text = "Beállítások"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 615.0
+offset_top = 14.0
+offset_right = 1315.0
+offset_bottom = 714.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_kg30q")
+theme_override_font_sizes/font_size = 150
+text = "Beállítások"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 2
+offset_left = 615.0
+offset_top = 212.0
+offset_right = 1315.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("3_kg30q")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_doeuw")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1649.0
+offset_top = 16.0
+offset_right = 3577.0
+offset_bottom = 1104.0
+scale = Vector2(0.15, 0.15)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_0ftmd")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ukcis")
+icon = ExtResource("6_eqqgx")
+flat = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1630.0
+offset_top = -3.0
+offset_right = 3558.0
+offset_bottom = 1085.0
+scale = Vector2(0.15, 0.15)
+theme_override_fonts/font = ExtResource("4_0ftmd")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ukcis")
+icon = ExtResource("6_eqqgx")
+flat = true
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 408.0
+offset_right = 1277.0
+offset_bottom = 508.0
+min_value = 0.05
+max_value = 1.0
+step = 0.0
+value = 0.05
+ticks_on_borders = true
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 675.0
+offset_top = 364.0
+offset_right = 1016.0
+offset_bottom = 431.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_kg30q")
+theme_override_font_sizes/font_size = 50
+text = "Egér Érzékenység"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 671.0
+offset_top = 360.0
+offset_right = 711.0
+offset_bottom = 383.0
+theme_override_fonts/font = ExtResource("3_kg30q")
+theme_override_font_sizes/font_size = 50
+text = "Egér Érzékenység"
+
+[node name="RepaCrossJavitott" type="Sprite2D" parent="."]
+position = Vector2(236, 1120)
+rotation = 0.436332
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_p38kj")
+
+[node name="restart" type="Button" parent="."]
+layout_mode = 2
+offset_left = 615.0
+offset_top = 512.0
+offset_right = 1315.0
+offset_bottom = 520.0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_kg30q")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ogr8g")
+text = "ÚJRA KEZDÉS"
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 655.0
+offset_top = 658.0
+offset_right = 1255.0
+offset_bottom = 858.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 207.0
+offset_right = 375.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(1, 0.688729, 0.639383, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_kg30q")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_81mmm")
+text = "Biztos?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ja" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 93.0
+offset_right = 152.0
+offset_bottom = 179.0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_kg30q")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ppiox")
+text = "Igen"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 89.0
+offset_right = 562.0
+offset_bottom = 180.0
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_kg30q")
+theme_override_font_sizes/font_size = 60
+text = "Nem"
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/ja" to="." method="_on_ja_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]

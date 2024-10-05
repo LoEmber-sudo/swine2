@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dneuvwm3nwty6"]
+
+[ext_resource type="Script" path="res://Script/audio.gd" id="2_j8tpl"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+autoplay = true
+mix_target = 1
+script = ExtResource("2_j8tpl")

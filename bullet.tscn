@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1115pwkmk2ak"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_jn0fk"]
+[ext_resource type="PackedScene" uid="uid://cid0x1nkudfc0" path="res://3D/bullet_1.blend" id="2_xknae"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qiygj"]
+albedo_color = Color(1, 0.780392, 0.458824, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vavyk"]
+albedo_color = Color(1, 0.780392, 0.458824, 1)
+emission = Color(1, 0.780392, 0.458824, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vrqyn"]
+top_radius = 0.15
+bottom_radius = 0.15
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5wlf"]
+albedo_color = Color(1, 0.780392, 0.458824, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v45f0"]
+albedo_color = Color(1, 0.780392, 0.458824, 1)
+emission = Color(1, 0.780392, 0.458824, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k5v7v"]
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_mrfb1"]
+size = Vector3(0.05, 0.05, 0.05)
+
+[node name="bullet" type="Node3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+script = ExtResource("1_jn0fk")
+
+[node name="bullet_1" parent="." instance=ExtResource("2_xknae")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0)
+
+[node name="Light" parent="bullet_1" index="0"]
+light_energy = 0.0
+
+[node name="Camera" parent="bullet_1" index="1"]
+transform = Transform3D(1.7148, -0.810034, 1.6289, -3.72529e-08, 2.23849, 1.11318, -1.81919, -0.763552, 1.53543, 6.7184, 4.6003, 3.31202)
+
+[node name="Gömb" parent="bullet_1" index="2"]
+transform = Transform3D(0.532, 0, 0, 0, 0.632, 0, 0, 0, 0.632, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_qiygj")
+
+[node name="henegr" parent="bullet_1" index="3"]
+transform = Transform3D(0.53211, 0, 0, 0, 0.632149, 0, 0, 0, 0.632149, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_vavyk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="bullet_1"]
+transform = Transform3D(0.165703, 0, 0, 0, 0.065, -8.88178e-15, 0, 2.66454e-15, 0.223521, 0.00344398, 0.015396, -0.00134765)
+mesh = SubResource("CylinderMesh_vrqyn")
+surface_material_override/0 = SubResource("StandardMaterial3D_n5wlf")
+
+[node name="RayCast3D" type="RayCast3D" parent="bullet_1" groups=["Bullet"]]
+transform = Transform3D(1, 0, 0, 0, -0.999963, -0.00858693, 0, 0.00858693, -0.999963, 0, 0.27035, -1.18174e-08)
+target_position = Vector3(0, 0.5, 0)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0602975)
+material_override = SubResource("StandardMaterial3D_v45f0")
+emitting = false
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_k5v7v")
+draw_pass_1 = SubResource("BoxMesh_mrfb1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[editable path="bullet_1"]

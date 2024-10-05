@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=2 format=3 uid="uid://ckxus5r1uffq2"]
+
+[ext_resource type="Script" path="res://Script/weapon_resource.gd" id="1_nle8v"]
+
+[resource]
+script = ExtResource("1_nle8v")
+Weapon_name = "AcélTüske"
+Activate_Anim = "AcélTüske_elővétel"
+Deactivate_Anim = "AcélTüske_eltétel"
+Reload_Anim = "AcélTüske_reload"
+Shoot_Anim = "AcélTüske_lövés"
+Current_ammo = 8
+Magazine = 5
+Max_ammo = 8
+AutoFire = false

@@ -1,0 +1,135 @@
+[gd_scene load_steps=14 format=3 uid="uid://bscl501bj6d4i"]
+
+[ext_resource type="Texture2D" uid="uid://dvnsyt5pmghho" path="res://swine_2_ui_2_kozipso.png" id="1_hegfi"]
+[ext_resource type="Script" path="res://Script/choose_your_character.gd" id="1_nydmq"]
+[ext_resource type="Texture2D" uid="uid://b4p107j80re2v" path="res://Textúra/hamamamadiszno.png" id="2_k8ogl"]
+[ext_resource type="Texture2D" uid="uid://ctatxg312vfrk" path="res://Textúra/humamarabbit.png" id="3_rksym"]
+[ext_resource type="FontFile" uid="uid://qh1gu7xah85u" path="res://SWINPH.ttf" id="4_nj6v1"]
+[ext_resource type="FontFile" uid="uid://cddvu7fggguqi" path="res://SWINRH.ttf" id="6_3qd6m"]
+[ext_resource type="Texture2D" path="res://Close-removebg-preview.png" id="7_htv3a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2lj2m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xtxw"]
+bg_color = Color(0, 1, 0, 1)
+draw_center = false
+border_width_right = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x5vnp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uf6wq"]
+bg_color = Color(0, 1, 0, 1)
+draw_center = false
+border_width_right = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2xe16"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s8je2"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nydmq")
+
+[node name="hatter" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -798.0
+offset_top = -210.0
+offset_right = 2872.0
+offset_bottom = 1290.0
+texture = ExtResource("1_hegfi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 163.0
+offset_top = -392.0
+offset_right = 1463.0
+offset_bottom = 908.0
+scale = Vector2(1.5, 1.5)
+
+[node name="diszno" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2lj2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8xtxw")
+icon = ExtResource("2_k8ogl")
+flat = true
+
+[node name="nyul" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x5vnp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uf6wq")
+icon = ExtResource("3_rksym")
+flat = true
+
+[node name="d1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 27.0
+offset_right = 728.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nj6v1")
+theme_override_font_sizes/font_size = 150
+text = "DISZNÓ"
+
+[node name="d2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 26.0
+offset_right = 740.0
+offset_bottom = 220.0
+theme_override_fonts/font = ExtResource("4_nj6v1")
+theme_override_font_sizes/font_size = 150
+text = "DISZNÓ"
+
+[node name="ny1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1234.0
+offset_top = 20.0
+offset_right = 1542.0
+offset_bottom = 214.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nj6v1")
+theme_override_font_sizes/font_size = 150
+text = "NYÚL"
+
+[node name="ny2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1205.0
+offset_top = 20.0
+offset_right = 1469.0
+offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("4_nj6v1")
+theme_override_font_sizes/font_size = 150
+text = "NYÚL"
+
+[node name="vissza" type="Button" parent="."]
+layout_mode = 0
+offset_left = 766.0
+offset_top = 29.0
+offset_right = 1166.0
+offset_bottom = 229.0
+theme_override_fonts/font = ExtResource("6_3qd6m")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2xe16")
+text = "VISSZA"
+flat = true
+
+[node name="close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1769.0
+offset_top = 3.0
+offset_right = 1927.0
+offset_bottom = 161.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s8je2")
+icon = ExtResource("7_htv3a")
+flat = true
+
+[connection signal="pressed" from="HBoxContainer/diszno" to="." method="_on_diszno_pressed"]
+[connection signal="pressed" from="HBoxContainer/nyul" to="." method="_on_nyul_pressed"]
+[connection signal="pressed" from="vissza" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]

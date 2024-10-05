@@ -1,0 +1,121 @@
+[gd_scene load_steps=13 format=3 uid="uid://xmylp7w0o2at"]
+
+[ext_resource type="Script" path="res://Script/main_menu.gd" id="1_711cw"]
+[ext_resource type="Texture2D" uid="uid://dvnsyt5pmghho" path="res://swine_2_ui_2_kozipso.png" id="1_ti0wi"]
+[ext_resource type="Texture2D" uid="uid://ckdjrad8yvsbk" path="res://Swine_2_logo.png" id="3_ooung"]
+[ext_resource type="Texture2D" uid="uid://b0k7bhb4jppi4" path="res://Textúra/kek_gomb.png" id="3_xiaxg"]
+[ext_resource type="FontFile" uid="uid://qh1gu7xah85u" path="res://SWINPH.ttf" id="4_mdlkp"]
+[ext_resource type="Texture2D" uid="uid://csv3jsluht72s" path="res://Textúra/repa_cross_javitott.png" id="6_1bv8u"]
+[ext_resource type="Texture2D" uid="uid://cdgymmgclpf03" path="res://Textúra/disznó orr kilépés.png" id="6_dprg4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrl3u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmjym"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_576ut"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5fix"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gg35i"]
+
+[node name="Control" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_711cw")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -804.0
+offset_top = -213.0
+offset_right = 2866.0
+offset_bottom = 1287.0
+texture = ExtResource("1_ti0wi")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 158.0
+offset_top = 512.0
+offset_right = 2078.0
+offset_bottom = 1592.0
+scale = Vector2(0.86, 0.5)
+texture = ExtResource("3_xiaxg")
+expand_mode = 1
+
+[node name="Swine2Logo2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(983, 269)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_ooung")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 188.0
+offset_top = -187.0
+offset_right = 2108.0
+offset_bottom = 1175.0
+scale = Vector2(0.8, 0.8)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_ooung")
+
+[node name="close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1668.0
+offset_top = -7.0
+offset_right = 3596.0
+offset_bottom = 1081.0
+scale = Vector2(0.16, 0.16)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xrl3u")
+icon = ExtResource("6_dprg4")
+flat = true
+
+[node name="RepaCrossJavitott" type="Sprite2D" parent="."]
+position = Vector2(228, 275)
+rotation = -0.785398
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_1bv8u")
+
+[node name="RepaCrossJavitott2" type="Sprite2D" parent="."]
+position = Vector2(1652, 330)
+rotation = 0.785398
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_1bv8u")
+
+[node name="play" type="Button" parent="."]
+layout_mode = 2
+offset_left = 502.0
+offset_top = 635.0
+offset_right = 1502.0
+offset_bottom = 772.0
+theme_override_fonts/font = ExtResource("4_mdlkp")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vmjym")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_576ut")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y5fix")
+text = "JÁTÉK"
+
+[node name="beallitasok" type="Button" parent="."]
+layout_mode = 2
+offset_left = 502.0
+offset_top = 772.0
+offset_right = 1502.0
+offset_bottom = 909.0
+theme_override_fonts/font = ExtResource("4_mdlkp")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gg35i")
+text = "BEÁLLÍTÁSOK"
+
+[node name="Swine2Logo" type="Sprite2D" parent="."]
+position = Vector2(-946, 1312)
+texture = ExtResource("3_ooung")
+
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="beallitasok" to="." method="_on_button_2_pressed"]
