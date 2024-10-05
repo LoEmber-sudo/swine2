@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Script/world.gd" id="1_bocej"]
 [ext_resource type="Texture2D" uid="uid://cyrpn5cn0hmec" path="res://kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_pt4y8"]
-[ext_resource type="PackedScene" uid="uid://dnsm78dkc4fva" path="res://character_body_3d_2.tscn" id="2_xl2n3"]
-[ext_resource type="PackedScene" uid="uid://dog2gmvrg7l26" path="res://player.tscn" id="6_5ye48"]
+[ext_resource type="PackedScene" uid="uid://dnsm78dkc4fva" path="res://scenes/character_body_3d_2.tscn" id="2_xl2n3"]
+[ext_resource type="PackedScene" uid="uid://dog2gmvrg7l26" path="res://scenes/player.tscn" id="6_5ye48"]
 [ext_resource type="Script" path="res://Script/save_timer.gd" id="8_lvums"]
 [ext_resource type="Script" path="res://Script/fps.gd" id="10_gbsa2"]
 [ext_resource type="Texture2D" uid="uid://pkeddk3pufsw" path="res://Textúra/texture_07.png" id="10_p47rv"]

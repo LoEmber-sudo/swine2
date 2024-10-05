@@ -67,5 +67,4 @@ func update_ammo(action = "Refresh"):
 	var weapon_data = {
 		"Name" : weapon_name
 	}
-	
 	weapon_manager.update_hud(weapon_data)

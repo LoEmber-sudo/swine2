@@ -9,6 +9,9 @@ const WiNDOW_MODE_ARRAY :  Array[String] = [
 ]
 func _process(delta: float) -> void:
 	centre_window()
+	if Input.is_action_just_pressed("escape"):
+		get_tree().change_scene_to_file("res://scenes/Main_menu.tscn")
+		
 func centre_window():
 	var centre_screen = DisplayServer.screen_get_position() + DisplayServer.screen_get_size()/2
 	var window_size = get_window().get_size_with_decorations()
@@ -38,7 +41,7 @@ func on_window_mode_selected(index : int) -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/Main_menu.tscn")
 
 
 func _on_restart_pressed() -> void:

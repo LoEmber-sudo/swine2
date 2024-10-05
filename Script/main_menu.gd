@@ -9,14 +9,15 @@ func _on_close_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
-	get_tree().change_scene_to_file("res://beallitasok.tscn")
+	get_tree().change_scene_to_file("res://scenes/beallitasok.tscn")
 
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("escape"):
+		get_tree().quit()
 
 func _on_play_pressed() -> void:
-	if FileAccess.file_exists("user://savedgame.tres"):
-		get_tree().change_scene_to_file("res://main_3d.tscn")
+	if FileAccess.file_exists("user://scenes/savedgame.tres"):
+		get_tree().change_scene_to_file("res://scenes/main_3d.tscn")
 		loaded = true
 	else:
-		get_tree().change_scene_to_file("res://main_3d.tscn")
-
-	
+		get_tree().change_scene_to_file("res://scenes/main_3d.tscn")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://iglvsht72f4j"]
 
-[ext_resource type="Script" path="res://bullettrail.gd" id="1_q6ngb"]
+[ext_resource type="Script" path="res://Script/bullettrail.gd" id="1_q6ngb"]
 
 [node name="bullettrail" type="MeshInstance3D"]
 script = ExtResource("1_q6ngb")

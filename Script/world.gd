@@ -9,11 +9,18 @@ var current_gun : int
 var pisztoly = "AcélTüske"
 var Gépfegyó = "PewPew"
 var kés = "kés"
-var main_scene = "res://main_3d.tscn"
-#func _ready():
+var main_scene = "res://scenes/main_3d.tscn"
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("escape"):
+		get_tree().change_scene_to_file("res://scenes/esc_menu.tscn")
+		
+func _ready():
+	Engine.max_fps=60
 #	Audio.play_music_level()
 func _on_vissza_pressed() -> void:
 	get_tree().change_scene_to_file("res://Main_menu.tscn")
+
 # Function to save data to a text file
 func save_game():
 	var saved_game:SavedGame  = SavedGame.new()
@@ -21,11 +28,13 @@ func save_game():
 	saved_game.player_position_y = $"/root/PlayerGlobal".player.get_position_y()
 	saved_game.player_position_z = $"/root/PlayerGlobal".player.get_position_z()
 	ResourceSaver.save(saved_game, "user://savedgame.tres")
+
 func load_game():
 	var saved_game:SavedGame = load("user://savedgame.tres") as SavedGame
 	if FileAccess.file_exists("user://savedgame.tres"): 
 		player_global_position_x = saved_game.player_position_x
 		player_global_position_y = saved_game.player_position_y
 		player_global_position_z = saved_game.player_position_z
+
 func _on_timer_timeout() -> void:
 	save_game()

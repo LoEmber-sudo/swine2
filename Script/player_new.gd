@@ -13,8 +13,8 @@ extends CharacterBody3D
 @onready var gun_raycast: RayCast3D = $"nek/Pivot/eyes/Camera3D/weapon_manager/fps_rig/Acéltüske (1)/bullet_spawn/RayCast3D"
 @onready var animation_player: AnimationPlayer = $"nek/Pivot/eyes/Camera3D/weapon_manager/fps_rig/Acéltüske (1)/AnimationPlayer"
 var last_vel = Vector3.ZERO
-var bullet = load("res://bullet.tscn")
-var bullet_trail = load("res://bullettrail.tscn")
+var bullet = load("res://scenes/bullet.tscn")
+var bullet_trail = load("res://scenes/bullettrail.tscn")
 @onready var aim_raycast_end: Node3D = $nek/Pivot/eyes/Camera3D/aim_raycast_end
 
 
@@ -23,12 +23,12 @@ const BULLET_SPEED = 10.0
 var current_gun : int
 var pisztoly = "AcélTüske"
 var pisztoly_ammo = 8
-var pisztoly_tár = 5
+var pisztoly_tar = 5
 var pisztoly_eq = false
-var Gépfegyó = "PewPew"
-var Gépfegyó_ammo = 25
-var Gépfegyó_tár = 8 
-var kés = "kés"
+var Gepfegyo = "PewPew"
+var Gepfegyo_ammo = 25
+var Gepfegyo_tar = 8 
+var kes = "kes"
 var mouse_sense = 0.1
 var SPEED_CURRENT = 5.0
 const JUMP_VELOCITY = 4.5
@@ -59,13 +59,15 @@ var freelook_tilt = 8
 var sprinting = false
 var crouching = false
 var slide_speed = 10.0
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$"/root/PlayerGlobal".register_player(self)
 	World.load_game()
 	Audio.lower_volume()
-	if FileAccess.file_exists("user://savedgame.tres"):
+	if FileAccess.file_exists("user://scenes/savedgame.tres"):
 		self.global_translate(Vector3(World.player_global_position_x,World.player_global_position_y,World.player_global_position_z))
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -81,6 +83,7 @@ func _input(event):
 			rotate_y(deg_to_rad(-event.relative.x * mouse_sense))
 			pivot.rotate_x(deg_to_rad(-event.relative.y * mouse_sense))
 			pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+
 func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	# SHOOT
@@ -89,7 +92,7 @@ func _physics_process(delta: float) -> void:
 			if current_gun == 2:
 				if pisztoly_ammo > -1:
 					animation_player.play("AcélTüske_lövés")
-					label_4.text = str(pisztoly_ammo) + "x" + str(pisztoly_tár)
+					label_4.text = str(pisztoly_ammo) + "x" + str(pisztoly_tar)
 					instance = bullet.instantiate()
 					pisztoly_ammo -= 1
 					instance.position = gun_raycast.global_position
@@ -97,12 +100,12 @@ func _physics_process(delta: float) -> void:
 					instance.transform.basis = gun_raycast.global_transform.basis * 1 * BULLET_SPEED
 					get_parent_node_3d().add_sibling(instance)
 	if Input.is_action_pressed("reload"):
-		if pisztoly_tár > 0:
+		if pisztoly_tar > 0:
 			if pisztoly_ammo < 1:
 				pisztoly_ammo = 8
 				animation_player.play("AcélTüske_reload")
-				pisztoly_tár -= 1
-				label_4.text = str(pisztoly_ammo) + "x" + str(pisztoly_tár)
+				pisztoly_tar -= 1
+				label_4.text = str(pisztoly_ammo) + "x" + str(pisztoly_tar)
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	if Input.is_action_pressed("crouch") || sliding:
@@ -194,32 +197,39 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED_CURRENT)
 	last_vel = velocity
 	move_and_slide()
+
 func get_position_x():
 	return self.global_position.x
+
 func get_position_y():
 	return self.global_position.y
+
 func get_position_z():
 	return self.global_position.z
+
 func get_rotation_():
 	return self.global_basis
-func _process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
 	eq()
+
 func eq():
 	if Input.is_action_just_pressed("eq_1"):
 		if current_gun == 2:
 			animation_player.play("AcélTüske_eltétel")
 		current_gun = 1
-		label_2.text = Gépfegyó
-		label_4.text = str(Gépfegyó_ammo) + "x" + str(Gépfegyó_tár)
+		label_2.text = Gepfegyo
+		label_4.text = str(Gepfegyo_ammo) + "x" + str(Gepfegyo_tar)
 	if Input.is_action_just_pressed("eq_2"):
 		animation_player.play("AcélTüske_elővétel")
 		current_gun = 2
-		label_4.text = str(pisztoly_ammo) + "x" + str(pisztoly_tár)
+		label_4.text = str(pisztoly_ammo) + "x" + str(pisztoly_tar)
 		label_2.text = pisztoly
 	if Input.is_action_just_pressed("eq_3"):
 		if current_gun == 2:
 			animation_player.play("AcélTüske_eltétel")
 		current_gun = 3
-		label_2.text = kés
+		label_2.text = kes
+
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/Main_menu.tscn")
