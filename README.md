@@ -10,4 +10,6 @@ the features:
 - theres a main menu, settings and a working save system, the game saves every seconds right now so dont be suprised!
 - you can reset your progress in the settings!
 - the game is in hungarian right now but when its finished it will have an english and probably german translation!
+
+
 now with 250% GDscript!
