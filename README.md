@@ -1,6 +1,7 @@
 # swine2
-Swine 2, the game is in alpha, currently unplayable
-features:
+Swine 2, the game is in alpha, currently unplayable.
+
+the features:
 - There is a player with a pistol, the pistol has ammo and it can shoot, when an enemy npc is shot they get hurt!
 - there is a basic enemy that can track the players movements in real time! (it can also die)
 - you can move with wasd and jump, sprint with shift and crouch with C
