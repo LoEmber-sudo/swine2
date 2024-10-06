@@ -320,6 +320,8 @@ emission = Color(0.54902, 0, 0, 1)
 emission_energy_multiplier = 0.55
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
+collision_layer = 257
+collision_mask = 257
 script = ExtResource("1_xdrbp")
 
 [node name="Node3D" type="Node3D" parent="."]
@@ -413,7 +415,7 @@ libraries = {
 }
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="nek/Pivot/eyes/Camera3D/weapon_manager/fps_rig/Acéltüske (1)"]
-transform = Transform3D(-0.976987, 0.203248, -0.0647031, 0.202804, 0.979127, 0.0134307, 0.0660823, -4.12576e-07, -0.997814, 0.0224146, 0.216051, 0.696523)
+transform = Transform3D(-0.976987, 0.203248, -0.0647031, 0.202804, 0.979127, 0.0134307, 0.0660823, -4.45172e-07, -0.997814, 0.0224146, 0.216051, 0.696523)
 mesh = SubResource("PlaneMesh_vo2i2")
 surface_material_override/0 = SubResource("StandardMaterial3D_cdghb")
 

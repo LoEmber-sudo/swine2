@@ -65,7 +65,7 @@ func _ready():
 	$"/root/PlayerGlobal".register_player(self)
 	World.load_game()
 	Audio.lower_volume()
-	if FileAccess.file_exists("user://scenes/savedgame.tres"):
+	if FileAccess.file_exists("user://savedgame.tres"):
 		self.global_translate(Vector3(World.player_global_position_x,World.player_global_position_y,World.player_global_position_z))
 
 func _unhandled_input(event: InputEvent) -> void:

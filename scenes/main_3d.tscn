@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://m2jiflpr5tfy"]
+[gd_scene load_steps=19 format=3 uid="uid://m2jiflpr5tfy"]
 
 [ext_resource type="Script" path="res://Script/world.gd" id="1_bocej"]
 [ext_resource type="Texture2D" uid="uid://cyrpn5cn0hmec" path="res://kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_pt4y8"]
 [ext_resource type="PackedScene" uid="uid://dnsm78dkc4fva" path="res://scenes/character_body_3d_2.tscn" id="2_xl2n3"]
 [ext_resource type="PackedScene" uid="uid://dog2gmvrg7l26" path="res://scenes/player.tscn" id="6_5ye48"]
 [ext_resource type="Script" path="res://Script/save_timer.gd" id="8_lvums"]
+[ext_resource type="Texture2D" uid="uid://bjigg0bwcdyrw" path="res://Textúra/vér.png" id="8_mh5ob"]
 [ext_resource type="Script" path="res://Script/fps.gd" id="10_gbsa2"]
 [ext_resource type="Texture2D" uid="uid://pkeddk3pufsw" path="res://Textúra/texture_07.png" id="10_p47rv"]
 
@@ -105,7 +106,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -54.8436, 0)
 shape = SubResource("BoxShape3D_misbk")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
 autostart = true
 script = ExtResource("8_lvums")
 
@@ -114,6 +114,11 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "asdasdasd"
 script = ExtResource("10_gbsa2")
+
+[node name="Vér" type="Sprite2D" parent="."]
+position = Vector2(904.5, 569.5)
+scale = Vector2(1.20781, 1.30833)
+texture = ExtResource("8_mh5ob")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
